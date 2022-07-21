@@ -1,0 +1,1989 @@
+
+/* 
+    1- Common style
+    2-General styles
+    3- Sections :
+
+      3.0- Header sections
+      3.1- Home   sections
+      3.2- About    sections
+      3.3- portfolio  sections
+      3.4- offer   sections
+      3.5- Prices  sections
+      3.6- Team   sections
+      3.7- Blog page  sections
+      3.8- Contact   Section
+      3.9- Footer   Section
+      
+  */ 
+
+
+     /* 1- Common Styles */
+/* 
+     [ container ] أخلي الموقع في نص الشاشة من خلال 
+            في الصندوق  container   الموقع كلو  ينحط ويضع في  
+
+          الحاجات المشتركة في الموقع 
+        - overlay         
+        - opacity hover
+        - Section header
+        - Section padding 
+        - hover effect 1 ( left to right  )
+        - hover effect 2 ( top to bottom  )
+
+*/
+
+            
+   .overly {     /* ===> common use all page */
+
+        position: absolute;
+        
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;      
+        background-color: rgba(0,0,0,0.7)
+
+ }
+      
+   
+    /* effect عايز يقعد وقت شوي في ال */
+  
+     .hover-opacity {  
+                        /* transition خاصية ال===> CSS3 */
+
+      transition: opacity .5s;
+                                /* or 1s */
+
+     }
+
+
+   /* 2- opacity hover */
+
+
+     .hover-opacity:hover {
+
+      opacity: 0.8;
+    
+
+     }
+
+     /* نافذة أسود يتحرك effect  طريقة عمل section 2 نزبط في ال  */
+     /* <div class="about-item ltr-effect">  <=== في  */
+
+  /* 1 */
+
+   .ltr-effect {
+                      /* prent */
+    position: relative;
+
+   }
+    
+   /* 2 */
+                  
+   
+   .ltr-effect:after {
+                         /* child */                
+     position: absolute;
+     content: "";
+     width: 0;
+     /* الان أخلي اللون الاسود يملي كل المربع */  
+
+     top: 0;         /* top ينتهي عند ال  */  
+     left: 0;        /* left يبدا مع ال   */
+     right: 0;
+     bottom: 0;
+     background: #333;
+
+ /* z-index التحكم مين يظهر الأول في الظهور بواسطة  */   
+     z-index:-1 ;
+  /* عايز يظهر اللون الاسود براحة     */    
+     transition: width 0.5s;
+  
+   }
+
+    /* hover لما أعمل عليها .ltr-effect مهم جدا / لما أجي أشير علي   */ 
+     /* width:100% بتاعة إعملي لي afterهات ال */
+
+   .ltr-effect:hover:after {
+
+/* عايز يملي الاب كلو  */
+    width: 100%;
+
+   }
+
+
+
+
+     /* 2- General Styles CSS */
+
+          
+        * {
+
+                margin: 0;
+
+                padding: 0;
+
+                box-sizing: border-box;         /* ===>   css3 */
+
+        }
+
+            body {
+                      /*    Fonts      */
+                      /* CSS rules to specify families */
+
+              font-family: 'Varela Round', sans-serif;
+
+
+            }
+
+
+            .container {
+
+                width: 80%;
+
+              margin: auto;
+              
+            }
+
+    /* Section header  */
+
+  /* paddingالحاجات المشتركة للعناصر ال  */
+    .pd-y {
+
+      padding: 120px 0;
+
+    }
+
+    .section-header {
+
+     /* أي حاجة جواك يكون في نص الصفحة  */
+      text-align: center;
+
+    }  
+    
+    .section-header .section-title {
+
+     font-size: 35px;
+
+     /* كبير capital أول حرف يكون  */
+
+      text-transform: capitalize;
+
+      margin-bottom: 10px;
+
+    }
+
+  .section-header .line {
+
+    display: block;
+    height: 5px;
+    width: 60px;
+    background-color: #6195ff;
+    /* الحين أخلي الخط الازرق أوسطنها من النص  */
+    margin: 0  auto 70px auto;
+
+  }
+    
+
+       /* الحاجات المتكررة في الموقع | Refactor */
+
+      ul {
+ 
+         list-style:none;
+
+      }
+ 
+  /* الحاجات المشتركة في الالوان  */
+
+       :root {
+   /* html معناه الي ماسك تاغ ال  */
+
+    /* راح اعرف متغير يعني صندوق صغير وأضع جميع الالوان المتكررة */
+
+      --maincolor: #6195ff;
+
+      --graycolor:#999;
+
+      --bg-gray:#f9f9f9;
+
+      --whitecolor:#fff;
+
+    }
+
+        
+
+      /* 3- Sections Styles    */
+     
+         /* 3.0- header Sections    */
+
+         .header {
+
+      background: gray;    
+
+    /* scrollنحل مشكلة ال  */
+  position: fixed; 
+  width: 100%;  
+
+      /* home فوق قسم ال  header الأن عايز أحط  */
+    /*z-index أستخدم خاصية  */
+    z-index: 10; 
+                      
+
+              }
+
+
+    .header .logo {
+
+    width: 40%;
+
+    float: left;
+    }
+
+    /* Do small or big logo controll */
+
+     .header .logo img {
+
+       width: 20%;
+
+       margin-top: 15px;
+
+
+     }
+
+      .clear {
+
+        clear: both;
+
+     } 
+
+      h1 , h2 , h3 , h4 , h5 , h6 {
+
+        font-family: montserrat,sans-serif;
+
+
+      }
+      
+      button {
+
+        font-family: inherit;         /* ==> 'Varela Round', sans-serif */
+
+      }
+
+       /* a لتوفير السطور بشكل عام في  */
+/* 
+        a {
+
+            text-decoration: none;
+        }       */
+
+     
+     /* To solve float problem  NO:2 */
+
+       
+     .header-content {
+
+      /* overflow: hidden; */       /* ====> To solve float problem  NO:2 */
+                                  /* dropdown  تعطيل الخاصية لحل مشكلة ال */
+     }    
+          
+
+    .header .nav {
+
+      width: 60%;
+   
+    float: left;
+
+    list-style: none;
+     text-align: right;
+
+    }
+
+   /*  put lists side by side  */
+
+    .header .nav > li {
+
+      display: inline-block;
+
+       text-align: right;  
+
+    }
+
+
+      /* To remove line font  */
+
+   .header .nav > li > a {
+
+  /* list حجم عرض خط ال */
+
+     font-size: 15px;
+     font-weight: bold;
+
+    color: #fff;
+
+    text-decoration: none;
+     
+
+    /* Now away from each other ===> by padding  */
+     /* convert inline to block ===> by display */
+
+     display: block;
+
+     padding: 30px 0.6px;
+
+     
+   
+   }   
+
+     /* active & after ,before ,hover  <=== list نعمل  ونزبط في ال  */
+
+     .header .nav > li > a:after {
+
+        width: 0;
+       
+     }
+
+
+      /*   خط ازرق list يظهر لي علي كل a لما أشير علي  */
+
+        /* hover:after هات لي   */
+
+     .header .nav > li > a:hover::after {
+
+       width: 100%;
+ 
+     }    
+  
+     /* اعمل لها جميعا نفس الاستايل */
+
+      /*  Grouping   */
+     
+     .header .nav > li > a.active:after {
+
+      width: 100%;
+    
+   }
+
+     .header .nav > li > a.active::after , .header .nav > li > a::after {
+
+        content: "";
+        display: block;
+        margin-top:2px ;
+        height: 3px;
+
+        /* يظهر لي تحتها خط ازرق  list  لما أشير علي قائمة ال  */
+        /* background-color: #6159ff; */
+
+        /* يقعد شوي وقت ما يظهر خط ازرق  */  
+        transition: width 0.5s;
+     } 
+     
+
+        /*   list يظهر اللون عندما اشير قائمة ال  */
+
+     .header .nav  li  a.active::after , .header .nav  li  a:hover {
+
+        background-color: #FFA07A;
+
+		 transition: all .5s ease;
+    
+        }
+           
+
+
+
+        /* Dropdown */
+
+       
+		   
+      /* [ parent  ] */
+	  
+      .dropdown {
+
+        position: relative;
+
+
+    }
+
+  
+    /* [ child ] */
+
+  .dropdown-menu     {
+
+       position: absolute;
+
+   /*  رقم 1 blog post حق li زبط ال  */
+
+   background-color: #FA8072;
+   width: 60px;
+   text-align: center;
+   left: 81%;
+   top: 60%; 
+
+   /*   blog post button الان عايز أخفي  */
+
+        opacity: 0; 
+        visibility: hidden;          
+       transition: opacity 0.5s , visibility 0.5s;    
+
+       
+  }  
+
+  /*  تظهر  blog post button عايز لما أشير علي  */
+
+    .dropdown:hover  .dropdown-menu   {
+       
+        opacity: 1; 
+       visibility: visible;  
+      
+     
+                                               /* عكس السابقة   */
+    } 
+
+  /* 2 blog post حق li زبط ال  */
+
+   .dropdown-menu a {
+
+       color: #fff;
+       display: block;
+       padding: 0.5px;
+       text-decoration: none;
+       list-style: none;
+
+
+   }
+
+    /* Home Section */
+
+     .home {
+ 
+        height: 100vh;
+        background-image: url(../img/background/background1.png); 
+
+        background-size: cover;         /* ===>  CSS3 */
+
+        position: relative;
+
+     }
+     
+
+     .home-content {
+
+     /* hero imge tecnique */
+
+       width: 65%;
+
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      transform: translate(-50%,-50%);
+
+       text-align: center;
+     }
+ 
+
+     .home .title {
+
+         color: #fff;
+         font-size: 2.4rem;
+
+         /* capital */
+        text-transform: uppercase;
+
+     }
+
+     /* p */
+
+     .home .home-decs {
+
+      margin: 20px 0;
+
+      color: #fff;
+
+      letter-spacing: 2px;
+      line-height: 1.5;
+
+     }
+
+ /*  button */
+
+   
+   .home .btn {
+
+      min-width: 160px;
+
+      padding: 15px 0;
+
+      border: 0;
+
+      border-radius: 5px;
+     
+      cursor: pointer;          /* ===>  يتحكم في شكل الماوس  */
+
+      /* font size */
+
+     font-size: 18px;
+
+   }
+
+   /* عن بعضهما مسافة شوي button ابعاد ال  */
+
+
+     .home .btn-start {
+
+      margin-right: 10px;
+
+  /* button background */
+      background-color: #fff;
+
+     }
+
+  /* button background  */
+     .home .btn-learn  {
+
+      background-color: #6195ff;
+      color: #fff;
+
+     }
+
+
+     /* 3.1- Home sections   */
+
+    .about {
+
+    }
+
+    .about-content {
+
+     overflow: hidden;         /* float حل لمشكلة ال  */
+ 
+    }
+
+
+      /* fully customizible نضبظ جيدا ال  */
+
+    .about-item {
+
+   width: 30%;
+   float: left;
+   text-align: center;
+   /* ناقص الشكل يتزبط  */
+
+   border: 1px solid #e8e8e8;
+   padding: 50px 20px;
+  
+    }
+
+
+    /*   داخلها وخليها لون أبيضabout-item-title عليك هات ال hover لما أعمل   */
+
+    .about-item:hover .about-item-title {
+
+      color: #fff;
+
+    }
+
+    .about-item.mg {
+
+    margin: 0  5%;
+   /* 0 = top , bottom مش عايز 
+   5% = left , right */
+
+
+    }
+
+    /* icon نضبظ ال  */
+
+    .about-item .icon {
+
+      color: #6195ff;
+
+      margin-bottom: 10px;
+    }
+
+    /* title نضبظ ال  */
+
+    .about-item-title {
+
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    transition: color 0.5s;  
+
+
+    }
+
+    /* .about-item-desc في p  نضبظ ال  */
+
+    .about-item-desc {
+
+      /* اوسع الخطوط عن بعض  */
+
+      line-height: 1.6;
+      margin-bottom: 10px;
+      color: #999;
+
+    }
+
+     /* about-item-link في  read more الان نضبظ  */
+
+
+   .about-item-link {
+
+   color: #6195ff;
+   text-transform: capitalize;
+
+   }
+
+
+     /* portfolio Section */
+
+  .portfolio {
+
+     background: #f9f9f9;
+
+  }  
+
+  /* بعد ما صفينا 6 صور تحت بعض  */
+
+                    /* parent */
+  .portfolio-content {
+                       /* overflow الاب يأخد  */
+   overflow: hidden;
+
+
+  }
+                      /* child */
+  .portfolio-item {
+                      /* float  الأبناء يأخدو   */
+    width: 32%;
+    float: left;
+    margin-bottom: 25px;
+                   /*   النتيجة / الصور تعدل وأخد كل صورة جنب بعض  */
+                          /* بحجمها الطبيعي      */
+
+    /* layer-content  يعتبر أبو  portfolio-item */
+    position: relative;
+
+      /* كيف أخلي واحس الصورة اللي وراه ذاخل شوي  */
+      padding: 20px;
+
+
+
+  }
+
+  /* width:30% بتاعها هو parent أنا عايز الان كل صورة تأخذ نفس الحجم ال */
+
+  .portfolio-item img {
+                         /* width:100% هات الصور اللي ذاخلها خلي لي  */
+  width: 100%;
+           
+                /* width:30%بتاعها الي واخذ  parent من ال  width: 100%;  */
+                   /* النتيجة / صغر شوي حجم كل الصور  */
+
+
+
+  }
+
+  /* right , left ما بينهم margin عايز أمسك الصورة الثانية والصورة الثالثة أعمل  */
+
+       /* work2.png ,work5.png<== HTML <=== في كلاسات الصورة mg أجي أضيف كلمة  */
+
+       .portfolio-item.mg {
+                                     /* .mg  وكمان   .portfolio-item هات  */
+        margin: 0 2%;
+
+
+       }    
+       
+
+       /*hover عايز لما أشير الصورة يعمل لي  */
+
+
+         .portfolio-item .layer-content {     /* child for .portfolio-item */
+
+            position: absolute;   
+           /* work1  أريد الايقونات تطلع ذاخل صورة  */
+
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+            /* كيف أخلي اللون شفاف */
+           background:rgba(0 , 0 , 0 ,0.5) ;
+
+       /*title اخفاء الكتابة   */
+            opacity: 0;
+           visibility: hidden;
+           transition: opacity 0.2s; 
+         
+         }
+
+
+      .portfolio-item:hover .layer-content {
+
+        opacity: 1;
+        visibility: visible;
+
+      }
+
+
+
+     /* في قلب الصورة  h3 كيف أخلي المحتوي الكتابة  */
+     /* hero img الحل الامثل أستخدم فكرة  */
+
+  .layer-content .layer-info {
+     position: absolute;  
+     width: 80%;
+
+     /* كيف أوسطن الكلام في نص الصورة  */
+     /*hero img الجواب بفكرة ال */
+
+     left: 50%;
+     top: 50%;
+     transform: translate(-50%,-50%);
+     text-align: center;
+
+
+  }
+
+  /*title نزبط ال  */
+
+  .layer-content .category {
+
+   color: #6195ff;  
+   text-transform: uppercase;  
+    /* block لازم احول margin ما يشتغل ال */
+     display: block;
+    margin-bottom: 5px;
+    position: relative;
+    top: 10px;
+         /* اخلي يتحرك المحتوي فوق شوي براحة */
+       transition: top 0.5s, opacity 0.5s;
+       /* يتاخر شوي في الانتظار المحتوي */
+       opacity: 0;
+       transition-delay: .2s;
+
+  }
+
+  .layer-content-title {
+
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    top: 10px;
+     /* اخلي يتحرك المحتوي فوق شوي براحة  */
+   transition: top 0.5s, opacity 0.5s;
+
+ /* يتاخر شوي في الانتظار المحتوي */
+      opacity: 0;
+   transition-delay: 0.3s;
+
+  }
+
+  .layer-content a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+     /* اخلي يتحرك المحتوي فوق شوي براحة */
+    transition: top 0.3, opacity 0.5s;
+
+ /* يتاخر شوي في الانتظار المحتوي */
+    opacity: 0;
+    transition-delay: 0.5s;
+
+  }
+
+  /* عايز أوسطن الايقونات في نص الصورة */
+    
+   .layer-content a i {
+
+/*.layer-content a في height  نفس حجم ال  */
+    line-height: 40px;
+
+   }
+
+
+   /*  في الجولة الاخيرة عايز لما أشير علي الصورة يطلع المحتوي اللي جواه فوق يتحرك شوي */
+
+
+   .portfolio-item:hover .layer-content-title,
+   .portfolio-item:hover .layer-content a,
+   .portfolio-item:hover .layer-content .category  {
+
+      top: 0;
+
+       /* يتاخر شوي في الانتظار المحتوي */
+
+       opacity: 1;
+       visibility: visible;
+
+   }
+
+
+   
+   /* offer Section| section 4  */
+   /* Offer Section */       /* | why we offer */
+   
+
+   .offer {
+
+  }
+
+  
+  .offer-content {
+      overflow: hidden;
+  }
+  
+  .offer-item {
+      width: 30%;
+      float: left;
+      margin-bottom: 20px;
+      border: 1px solid #e8e8e8;
+      padding: 30px 15px 30px 70px;
+      position: relative
+  }
+  
+  .offer-item.mg {
+      margin: 0 5%;
+  }
+  
+  .offer-item .icon {
+      position: absolute;
+      left: 15px;
+      top: 35px;
+      color: var(--mainColor)
+  }
+  
+  .offer-item-title {
+      text-transform: capitalize;
+      margin-bottom: 15px;
+      transition: color 0.5s;
+  }
+  
+  .offer-item-desc {
+      text-transform: capitalize;
+      margin-bottom: 15px;
+      line-height: 1.6;
+      color: #999
+  }
+  
+  .offer-item:hover .offer-item-title {
+      color: #fff;
+  }
+
+
+
+
+
+   /* Service section  | why choose us  */
+
+
+   /* background service all */
+   .service {
+
+    background-color: #f9f9f9;
+
+   }
+
+
+   .service-item {
+    width: 68%;
+    float: left;
+
+}
+ 
+    .service-content {
+
+       overflow: hidden;
+
+    }  
+
+   /* welcomتعديل النص في  */
+.service-item .section-header {
+    text-align: left
+}
+
+  /* welcom اللي تحت line تعديل الخط  */
+.service-item .section-header .line {
+    margin: 0 0 40px 0 
+}
+
+.service-item-desc {
+    padding-right: 20px;
+    color: #999;
+    line-height: 1.5;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.service-list {
+    list-style: none
+}
+
+ /*عن الثانيةli أبعد لي كل  */
+.service-list li {
+    margin-bottom: 10px;
+    color: #999
+}
+
+  /* علامة الصح icon تعديل ال */
+.service-list li i {
+    border: 1px solid #6195ff;
+    color: #6195ff;
+    width: 30px;
+    height: 30px;
+    padding: 7px 5px;
+    border-radius: 50%;
+}
+
+
+  /* تعديل الصورة  */
+.service-item-img img {
+    width: 69%;
+
+    /* hero img تحريك من يمين وفوق بواسطة تكنيك  */
+                   /* right *//* top */
+    transform: translate(139%,-91%);
+    
+}
+
+  .service-bollets {
+     list-style: none;
+     text-align: center;     
+
+/* hero img تحريك من يمين وفوق بواسطة تكنيك  */
+     transform: translate(84%,-949%);
+
+  }
+
+  /*اللي تحت الصورة  bollet تعديل ال  */
+.service-bollets li {
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+
+    /* عن بعضهاbolletابعاد ال  */
+    margin: 10px 5px;
+
+    /*يكون دائرة bollet  شكل ال  */
+    border-radius: 50%;
+   
+
+}
+/* li لاصقة مع active اللي وأخدة كلاس li هات ال  */
+.service-bollets li.active {
+    background-color: #6195ff ; 
+}
+
+/* نفسها لون ازرق background خليني li  لما أشير علي أي  */
+.service-bollets li:hover {
+    background-color:#6195ff ;
+}
+
+
+
+     /* number section |  Statistics  */
+
+
+                 /* parent */
+     .numbers {
+
+       position: relative;
+       /*background-image أول حاجة نضع ال  */
+
+         background-image: url(../img/background/background2.png);
+
+         /* المشكلة ما ظهرت الصورة عندي لماذا؟ */
+       /* بتاعة 0 height ال .numbers  الجواب / لن الأب 
+       height:0
+    position:absolute  وأخد  overlay  علشان أبنه ال   
+       الاب مش حاسس.numbers فهو يعتبر مش من ضمن الأب بتاعة فأصبح ال
+         overlay بأبنه     
+      .numbers في الاب  height والحل النهائي/ أعطي ال        */
+
+      height: 300px;
+
+      /* ملاحظ الصورة تتحرك معاي  */
+
+      background-size: cover;              /* علشان الصورة تملئ الحيز اللي هي موجودة فيه */
+      
+      background-attachment: fixed;         /* يكون الصورة ثابتة scroll علشان لما أعمل  */  
+
+        
+     }
+
+
+     .numbers-items {
+
+       overflow: hidden;            /* floatلنو أعطي الأبناء فكرة ال */
+
+       /* padding= ينزل تحت شوي راح أعطي icon عايز ال4  */
+
+       padding: 100px 0 ;
+       /*"numbers-items pd-y" <== htmlفي [pd-y]أو أنا فعلتها */
+
+
+     }
+
+     .number-item {
+
+       width: 25%;
+
+      /* ؟ width: 25%; ليه  */
+      /* لانهم أربع دفات جنب بعض 
+      100/4 = 25% */
+
+       float: left;  
+     /*  عايز كل الكلام اللي تحتها في النص*/
+       text-align: center;
+
+
+     }
+
+     /* <i> الان نزبط الايقوانات في   */
+
+     .number-item .icon {
+      color: #6195ff;
+      margin-bottom: 15px;
+
+     }
+
+     /*  number-item-title = h3نزبط ال  */
+
+     .number-item-title {
+
+       font-weight: bold;
+       font-size: 30px;
+       color: #fff;
+
+     }
+
+     /* number-item-text= span نزبط ال  */
+
+     .number-item-text {
+
+      color: #fff;
+
+     }
+
+
+
+
+     /* Pricing section |  pricing table  */
+
+
+    .pricing {
+
+    }
+
+                   /* parent */
+    .pricing-plans {
+
+      overflow: hidden;         /* floatعلشان الأبناء الي ذاخلها يأخذوا  */
+      
+
+    }
+
+                 /* child */
+    .pricing-item {
+
+     width: 30%;
+     /* 100/3 div = 33  */
+
+     float: left;
+
+     padding: 20px 15px;
+          /* top   left right */
+
+     border: 1px solid #e8e8e8;
+
+     text-align: center;
+
+
+    }
+
+       /* عنصر واحد  */
+    .pricing-item.mg {
+
+  /* الأن أفصل الثلاث الدفات عن بعض أبعدهم مسافة */
+        margin: 0 5%;
+
+  /*مش عايز فوق وتحت = 0*/    /* 5% = من اليمين والشمال  */
+
+    }
+
+
+    /*border في داخل ال text الان نزبط ال  */
+
+    .pricing-item-text {
+    text-transform: uppercase;          /* كبير capital  كل الكلام  */
+
+     font-size: 17px;
+     color: #999;
+
+     /* colorعلي ال trnsition  تحديد مدة ال   */
+
+     transition: color 0.5s;
+
+       
+    }
+
+
+  /* $الان نرسم دائرة في ذاخلها 9 */
+
+  .pricing-item-permonth {
+
+     width: 130px;
+     height: 130px;
+    padding: 40px 0;
+
+     /* عايز احطة في النص  */
+
+      margin: 20px auto;
+
+      border: 2px solid #6195ff;
+
+      /* كيف أعمل الدائرة  */
+      border-radius: 50%;
+
+    /* colorعلي ال trnsition  تحديد مدة ال   */
+
+     transition: color 0.5s;
+
+
+
+
+/* 
+     / ملاحظة مهمة 
+     1- margin:auto= يبقي يكون widthلوعايز أوسطن عنصر وأخذ 
+     2- text-align:center=يبقي يكون text  لو عايز أوسطن كلام نص  */
+
+  }
+
+
+
+  /* pricing-item-permonth في محتويات الداخلية في size  نكبر ال  */
+
+
+  .pricing-item-permonth .doller {
+
+    font-size: 50px;
+
+  }
+
+  .pricing-item-permonth .month {
+
+   text-transform: uppercase;
+   font-weight: bold;
+   font-size: 15px;
+
+
+  }
+
+  /*ul نزبط ال */
+
+  .pricing-list {
+
+ /* ازالة النقاط  */
+  list-style: none;
+
+  }
+
+
+  /*ul نزبط المحتويات اللي ذاخل  */
+
+
+  .pricing-list li {
+
+      color: #999;
+      /*الكلمات ابعدهم عن بعض */
+      line-height: 1.8;
+
+  }
+
+
+  /* button نزبط ال  */
+
+  .pricing-item-purchase {
+    /* الطبيعي لهاbackground ازالة ال  */
+
+    background: none;
+    /*الطبيعي border ازالة ال */
+
+    border: 0;
+    /*اللي أبقاه background الان أعطي ال  */
+
+     display: block;          /* علشان يملئ الشاشة كلها  */
+
+     /*button الان نزبط ال  */
+
+     width: 140px;
+     border:2px solid #7ba7ff;
+     padding: 10px;
+     /*button الأن أوسطن ال  */
+     margin: 15px auto 0 auto;
+     color: #7ba7ff;
+    
+
+  }
+
+
+  /*html  نضيفها في [ltr-effect ]ناقص الاكشن الستائر السودة المتحركة =  عملتها سابقا */
+
+  /* لكن نعملها من فوق الي تحت  */
+
+      /* [أنسخ الكود السابق ] */
+
+
+      /* 1 */
+
+   .tb-effect {
+    /* prent */
+position: relative;
+
+}
+
+/* 2 */
+
+
+.tb-effect:after {
+       /* child */                
+position: absolute;
+content: "";
+
+/* عايز أخلي يتحرك الستائر من فوق الي تحت  */
+/* 100% الي width: 0;اخلي بدل  */
+ /* height:0 وال  */
+
+width: 100%;
+height: 0;
+
+
+/* الان أخلي اللون الاسود يملي كل المربع */  
+
+top: 0;         /* top ينتهي عند ال  */  
+left: 0;        /* left يبدا مع ال   */
+right: 0;
+bottom: 0;
+background: #333;
+
+/* z-index التحكم مين يظهر الأول في الظهور بواسطة  */   
+z-index:-1 ;
+/* عايز يظهر اللون الاسود براحة     */    
+
+/* height 0.5s  اخليها  width 0.5s بدل  */
+transition: height 0.5s;
+
+}
+
+/* hover لما أعمل عليها .ltr-effect مهم جدا / لما أجي أشير علي   */ 
+/* width:100% بتاعة إعملي لي afterهات ال */
+
+.tb-effect:hover:after {
+
+/* عايز يملي الاب كلو  */
+/* height: 100%; أخليها width: 100% بدل  */
+height: 100%;
+
+}
+
+  
+
+        /* $خليني الكلام 9 hover  لما أعمل 
+        والنص اللي معها لون أبيض بدل الاسود  */
+
+  .pricing-item:hover .pricing-item-permonth  {
+
+    /* لما أعمل عليك وأشير لك الماوس  .pricing-item هات ال 
+     وخليني الكلام اللي ذاخلها لون أبيض .pricing-item-permonth   هات لي  hovrt 
+   */
+
+    color: #fff;
+
+  }      
+
+
+   
+  /* لونه أزرق بدل الرمادي basic plane خليني الكلام hover لما أجي أعمل  */
+
+
+  .pricing-item:hover .pricing-item-text {
+
+     /* hover  لما أعمل عليك وأشير لك الماوس .pricing-item هات ال 
+     وخلني الكلام اللي ذاخلها لون أزرق  .pricing-item-text هات لي  */
+
+
+    color: #6195ff;
+
+
+  }
+
+
+
+
+
+       /* Testimonail section */
+
+
+     /* فقط وينزل تحتTestimonail علشان تظهر في مسار */
+
+     .testmonail {
+
+      position: relative;
+
+      /* نزبط صورة الخلفية  */
+      background-image: url(../img/background/background3.png);
+
+      background-attachment: fixed;           /* يكون الصورة ثابتة scroll علشان لما أعمل  */  
+      height: 400px;
+
+     }
+
+
+                        /* parent */
+    .testmonail-content {
+
+      overflow: hidden;            /* علشان الاب يحس فيهم  float الابناء يكون لهم */
+
+      /* اخلي الصورة ينزل شوي  */
+
+      padding: 120px 0;
+
+  /* تزبيط الصورتين وتمركزهما  */
+
+      width: 80%;
+
+      /* الان أوسطن الصورتين في النص  */
+
+      margin: auto;
+
+
+      
+    }
+
+  
+    .testmonail-item {
+
+      width: 50%;       /* I have 2 image = 100/2 = 50% */
+
+      float: left;
+
+      /* All inside text */
+      color: #fff;
+
+
+    }
+
+  /* position  نزبط شكل الصورتين بال */
+
+     
+                                        /* parent */
+  .testmonail-item .testmonail-toplayer {
+
+     padding: 10px 2px 40px 100px;           /* لحل مشكلة الكلام نزل تحت الصورة bottom:40 نخلي ال  */
+
+     position: relative;
+
+  }
+
+    /* عايز أضع الصورة الي يسار شوي  */
+
+                                             /* child */
+    .testmonail-item .testmonail-toplayer img {
+
+      position: absolute;
+        /*  خليك في اتجاه اليسار  */
+        left: 10px;
+        top: 10px;
+
+       /* عايز أخلي الصورة دائرة  */
+
+       border-radius: 50%;
+
+    
+     
+
+
+    }
+  
+      /* hashiتصغير صورتي  */
+
+    .testmonail-item .testmonail-toplayer .hashi {
+
+      width:14%;
+      border-radius: 50%;
+
+      margin: 0 0 0 18px;
+      transform: translate(-5%,-10%)
+      
+
+    }
+
+
+    /* Joe Doe نزبط اسم  */
+
+    .testmonail-item .testmonail-toplayer h3 {
+
+      margin: 5px 0;
+
+    }
+
+    /*web designer نغير لون  */
+
+    .testmonail-item .testmonail-toplayer span {
+
+      color: #6195ff;
+
+    }
+
+
+    /* p  نزبط ال  */
+
+    .testmonail-desc {
+
+      line-height: 1.5;
+      font-size: 17px;
+    }
+
+
+
+
+
+    /* Team section |  our team section */
+
+
+   .team {
+
+
+   }
+
+                  /* parent */
+   .team-content {
+
+     overflow: hidden;
+
+   }
+
+
+              /* child */
+   .team-item {
+
+   width: 30%;            /* 100/3 = 33% */
+
+   float: left;
+   /* لون الخلفية */
+   background: #e8e8e8;
+
+   padding: 40px 10px ;
+   text-align: center;
+
+  
+   }
+
+   /*  عمل مسافة بين ثلاثة الصور الرئيسية  */
+
+      .team-item.mg {
+
+      margin: 0 5%;
+                 /* left,right */
+
+                 
+
+      }
+
+
+
+
+    /* 1- تصغير الصورة  */
+
+    /* 2-  position بتاع السوشيال بواسطة icon نزبط ال  */
+
+                   /* parent2 */
+    .team-item .team-img {
+
+     width: 90%;
+
+     /* أوسطن الصورة */
+     margin: auto;
+
+     
+     position: relative;
+
+    }
+
+
+                     /* child by (.team-item .team-img) 2 */
+     .team-overlay {
+
+        position: absolute;
+
+        /* وأملي الاب كلو  */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background: rgba(0, 0,0 ,0.5 );               /* ظهرت الصورة بعد ما خليتها شفاف */
+
+
+        /*  عليها الجزء الاول hover الان أعمل الصورة يختفي ويظهر لما أشير  */
+
+        opacity: 0;
+        visibility: hidden;
+
+
+     }
+
+      /* نزبط الايقونات حقت السوشيال مديديا */
+
+       .team-overlay a {
+
+        display: block;             /* يصف لي علي الطول تحت ورا تحت  */
+
+        width: 40px;
+        height: 40px;
+        background: #7ba7ff;
+         /* لون النص */
+         color: #fff;
+
+         /* margin نخلي كل الايقونات علي يمين الصورة بواسطة  */
+
+         margin-left: auto;       /* النتيجة اتجه الايقونات  الي اليمين */
+
+        
+          
+       }
+
+
+       /* icon  نزبط المسافات في  */
+       .team-overlay a i {
+
+         line-height:40px;
+
+       }
+
+
+                             /* child2 */
+    .team-item .team-img img {
+
+      width: 100%;
+      
+       /* 100% =   parent  من ال */
+       /* .team-item .team-img */
+   
+    }
+
+
+
+
+    /*h3 , span نزبط ال  */
+
+    .team-item .team-info-title {
+
+       color: #222;
+       margin: 10px 0;
+
+       transition: color 0.5s;
+
+
+    }
+
+    .team-item .team-info-text {
+
+      color: #999;
+      text-transform: uppercase;
+      font-size: 14px;
+
+    }
+
+
+    
+   /*  عليها الجزء الاول hover الان أعمل الصورة يختفي ويظهر لما أشير  */
+
+    .team-item:hover .team-overlay {
+
+      visibility: visible;
+      opacity: 1;
+
+    }
+
+
+
+    /*   أعمل إيفكت شباك النزول  */
+   /* html <== في كلاسات  tb-effect  أضيف فقط  */
+
+
+
+
+
+    /* ولا يظهر في موقع background  يظهر خلف effect حل مشكلة ال  
+   ويظهر فوق الدنيا كلها  background  أنا أريده يطلع فوق ال 
+
+   الحل ===> by  z-index:1 */
+
+   .team-item.tb-effect {
+
+      z-index: 1;
+
+   }
+
+
+   /* hover تغيير الوان النصوص لما اشير بال  */
+
+   .team-item:hover .team-info-title {
+
+    color: #fff;
+   }
+
+
+   .team-item:hover .team-info-text {
+
+    color: #6195ff;
+
+   }
+
+
+
+
+
+   /* Blog section | Recent News */
+
+
+   .blog  {
+
+    background:#f8f8f8;
+
+   }
+   
+                   /* parent */
+   .blog-content {
+    
+    overflow: hidden;
+
+   }
+
+             /* child */
+   .blog-item {
+
+     width: 30%;
+
+     float: left;
+     background: #fff;
+
+     
+
+   }
+
+    /* ابعاد الثلاث الدفات الرئيسية عن بعضهم مسافة  */
+
+
+    .blog-item.mg {
+
+        margin: 0 5%;
+
+    }
+
+
+
+   /* تصغير الصورة */
+
+   .blog-item-img img {
+
+     width: 100%;               /* 100% بتاعها parent من ال  */
+
+
+   }
+
+    /* مسافات list ابعات ال  */
+
+     .blog-info {
+
+        padding: 20px;
+
+     }
+
+
+
+   .blog-list {
+
+     list-style: none;
+     margin: 10px 0;
+
+
+   }
+
+
+   /* جنب بعض list أصف ال  */
+
+   .blog-list li {
+
+     display: inline-block; 
+
+     margin: 0 5px;
+
+
+   }
+
+  /* تلوين الايقونات لون ازرق  */
+
+  .blog-list li i {
+
+  color: #6195ff;
+
+  } 
+
+
+
+  /* blog-title في titleضبظ ال  */
+
+  .blog-title {
+
+    font-weight: bold;
+
+    margin: 20px 0;
+
+
+  }
+
+
+  /*   blog-desc في p  نضبظ ال  */
+
+
+  .blog-desc {
+
+   color: #999;
+
+   margin-bottom: 10px;
+
+   /* أبعد لي الكلام عن بعض  */
+     line-height: 1.5;
+
+  }
+
+  /* Read more تلوين ال  */
+
+  .blog-link {
+
+    color: #6195ff;
+
+  }
+
+
+
+
+
+  /* Contact Section | Get in Touch */
+
+
+
+   .contact {
+
+
+   }
+
+                    /* parent */
+   .getintouch-items {
+
+        overflow: hidden;
+        margin-bottom: 20px;
+
+   }
+
+
+                            /* child */
+   .getintouch-items .item {
+
+        width: 30%;
+        float: left;
+        text-align: center;
+
+   }
+
+
+   .getintouch-items .item.mg {
+
+      margin: 0 5%;
+
+   }
+
+
+
+   .getintouch-items .item i {
+
+    color: #6195ff;
+
+
+   }
+
+
+   .getintouch-items .item-title {
+
+      font-weight: bold;
+
+      margin: 20px 0;
+
+   }
+
+
+   .getintouch-items .item-text {
+
+      color: black;
+
+   }
+
+
+   .contact form {
+
+    width: 60%;
+    margin:30px auto;
+
+   }
+
+
+
+.contact form input, .contact form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  border: 0;
+  background: #f4f4f4;
+  border-bottom: 2px solid #eee;
+  color: #354052;
+  padding: 0 10px;
+  margin-bottom: 20px;
+} 
+
+
+                      /* parent */
+.contact form .two-inputs {
+  overflow: hidden
+}
+
+
+
+                       /* child */
+.contact form .two-inputs input {
+  width: 49%;
+  float: left
+}
+
+
+ 
+.contact form .two-inputs input:last-child {
+  margin-left: 2%;
+}
+
+
+
+
+.contact form input[type=submit] {
+  width: 180px;
+  padding: 10px;
+  background: var(--mainColor);
+  color: #fff;
+  border: 0;
+  cursor: pointer;
+  margin: auto;
+  display:block;
+  font-family: inherit;
+}
+
+
+
+
+
+
+   /* Footer section |  logo  */
+
+
+   .footer {
+
+    background: #1c1d21;
+    text-align: center;
+
+    padding: 60px 0;
+
+   }
+
+
+   .footer-links {
+
+     list-style: none;
+     margin: 20px 0;
+
+   }
+
+
+    /* أصف جميع الايقونات جنب بعض  */
+
+   .footer-links li {
+
+    display: inline-block;
+
+   }
+
+
+    /* ضبط الايقونات وتلوينها  */
+
+   .footer-links li a {
+
+    display: block;        /* width ,height علشان أقدر أعطي block ليه  */
+
+    width: 50px;
+    height: 50px;
+    background: #6195ff;  
+
+    /* لون الكلام   */
+    color: #fff;
+
+   /* نبعد الايقونات عن بعض مسافة  */
+
+     margin: 0 5px;
+
+     /* تغير حوافز الايقونة نخليها دائرة  */
+
+     border-radius: 50px;
+
+   }
+
+  
+    
+   .footer-links li a i {
+
+     line-height: 50px;
+
+
+   }
+
+
+   /*  [hover-opacity]html نضيف كل الينكات  <== opacity نعمل تأثير ال  */
+
+   /* footer-links  نضيفها في كلا  */
+
+
+
+
+    /* p [copy right]نضبط ال  */
+
+
+    .footer .copyright {
+
+    color: #999;
+    font-size: 15px;
+    text-transform: uppercase;
+
+    }
+
+
+
+
+
+
+
+
+
